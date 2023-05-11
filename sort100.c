@@ -6,39 +6,39 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 03:17:10 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 03:29:24 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:28:27 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	init_chunk( t_data **new)
+int	init_chunk( t_data **a)
 {	
 	int	chunk_size;
 
-	if (ft_lstsize(*new) <= 100)
+	if (ft_lstsize(*a) <= 100)
 		chunk_size = 5;
 	else
 		chunk_size = 9;
 	return (chunk_size);
 }
 
-void	sort_infinitenumbers(t_data **new, t_data **b)
+void	sort_infinitenumbers(t_data **a, t_data **b)
 {
 	int	chunk;
 	int	i;
 	int	j;
 	int	chunk_size;
 
-	chunk_size = init_chunk(new);
-	chunk = ft_lstsize(*new) / chunk_size;
+	chunk_size = init_chunk(a);
+	chunk = ft_lstsize(*a) / chunk_size;
 	i = chunk;
 	j = 0;
-	while (*new)
+	while (*a)
 	{
-		if ((*new)->index < i)
+		if ((*a)->index < i)
 		{
-			pb(new, b);
+			pb(a, b);
 			j++;
 			if (i - (chunk / 2) < (*b)->index)
 				rb(b);
@@ -46,12 +46,12 @@ void	sort_infinitenumbers(t_data **new, t_data **b)
 				i += chunk;
 		}
 		else
-			ra(new);
+			ra(a);
 	}
-	push_to_a(new, b);
+	push_to_a(a, b);
 }
 
-void	check_and_push(int pos, int instructions, t_data **b, t_data **new)
+void	check_and_push(int pos, int instructions, t_data **b, t_data **a)
 {
 	if (pos < ft_lstsize(*b) / 2)
 	{
@@ -63,10 +63,10 @@ void	check_and_push(int pos, int instructions, t_data **b, t_data **new)
 		while (instructions--)
 			rrb(b);
 	}
-	pa(b, new);
+	pa(b, a);
 }
 
-void	push_to_a(t_data	**new, t_data	**b)
+void	push_to_a(t_data	**a, t_data	**b)
 {
 	int	max_pos;
 	int	prev_pos;
@@ -81,15 +81,15 @@ void	push_to_a(t_data	**new, t_data	**b)
 	prev_pos = get_pos(*b, ft_lstsize(*b) - 2);
 		if (max_instructions > prev_instructions)
 		{
-			check_and_push(prev_pos, prev_instructions, b, new);
+			check_and_push(prev_pos, prev_instructions, b, a);
 			index_all_items(*b);
 			max_instructions = calculate_instructions(*b, get_pos(*b,
 						ft_lstsize(*b) - 1));
 			max_pos = get_pos(*b, ft_lstsize(*b) - 1);
-			check_and_push(max_pos, max_instructions, b, new);
-			sa(*new);
+			check_and_push(max_pos, max_instructions, b, a);
+			sa(*a);
 		}
 		else
-			check_and_push(max_pos, max_instructions, b, new);
+			check_and_push(max_pos, max_instructions, b, a);
 	}
 }

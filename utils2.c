@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 03:21:27 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 03:21:28 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:29:05 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ char	*ft_substr(char	*s, unsigned int start, size_t len)
 	return (p);
 }
 
-void	ft_lstadd_front(t_data **lst, t_data *new)
+void	ft_lstadd_front(t_data **lst, t_data *a)
 {
-	new->next = *lst;
-	*lst = new;
+	a->next = *lst;
+	*lst = a;
 }
 
 void	ft_putchar_fd(char c, int fd)

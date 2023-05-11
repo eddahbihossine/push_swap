@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sortone.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 03:18:05 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 20:28:40 by heddahbi         ###   ########.fr       */
+/*   Created: 2023/05/10 22:47:00 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/05/10 22:47:30 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	sort_2numbers(t_data **a)
+#include "push_swapbonus.h"
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (!check_sort(a))
+	unsigned char	*p;
+	void			*k;
+	int				n;
+
+	n = sizeof(p);
+	k = malloc(size * count);
+	if (!k)
+		return (free(k), NULL);
+	if (count * size > SIZE_MAX && size)
+		return (NULL);
+	p = k;
+	while (*p && (*p < n))
 	{
-		if ((*a)->content > (*a)->next->content)
-			sa(*a);
+		*p = 0;
+		p++;
 	}
+	return ((void *)p);
 }

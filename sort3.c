@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 02:54:36 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 02:54:37 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:30:16 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,26 @@ void	swap_reverse(t_data **stack)
 	rra(stack);
 }
 
-void	sort_3numbers(t_data **new)
+void	sort_3numbers(t_data **a)
 {
-	int	a;
+	int	f;
 	int	b;
 	int	c;
 
-	a = (*new)->content;
-	b = (*new)->next->content;
-	c = (*new)->next->next->content;
-	if (!(check_sort(new)))
+	f = (*a)->content;
+	b = (*a)->next->content;
+	c = (*a)->next->next->content;
+	if (!(check_sort(a)))
 	{
-		if (a > b && c > b && c > a)
-			sa(*new);
-		else if (a > b && b > c && a > c)
-			swap_reverse(new);
-		else if (a > b && b < c && c < a)
-			ra(new);
-		else if (a < b && b > c && c > a)
-			swap_reverse(new);
+		if (f > b && c > b && c > f)
+			sa(*a);
+		else if (f > b && b > c && f > c)
+			swap_reverse(a);
+		else if (f > b && b < c && c < f)
+			ra(a);
+		else if (f < b && b > c && c > f)
+			swap_reverse(a);
 		else
-			rra(new);
+			rra(a);
 	}
 }

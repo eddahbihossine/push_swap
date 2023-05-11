@@ -6,20 +6,20 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 02:39:54 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 02:39:59 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/10 23:00:08 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_data **new)
+void	rra(t_data **a)
 {
 	t_data	*front;
 	t_data	*prev;
 
-	if (*new != NULL && (*new)->next != NULL)
+	if (*a != NULL && (*a)->next != NULL)
 	{
-		front = *new;
+		front = *a;
 		prev = NULL;
 		while (front->next != NULL)
 		{
@@ -27,8 +27,8 @@ void	rra(t_data **new)
 			front = front->next;
 		}
 		prev->next = NULL;
-		front->next = *new;
-		*new = front;
+		front->next = *a;
+		*a = front;
 		write(1, "rra\n", 4);
 	}
 }
@@ -71,7 +71,8 @@ void	pb(t_data **a, t_data **b)
 void	pa(t_data **b, t_data **a)
 {
 	t_data	*swap;
-
+	if(!b)
+		ft_error();
 	if (b != NULL || (*b) != NULL)
 	{
 		swap = *b;
@@ -82,8 +83,8 @@ void	pa(t_data **b, t_data **a)
 	}
 }
 
-void	ss(t_data *new, t_data	*b)
+void	ss(t_data *a, t_data	*b)
 {
-	sa(new);
+	sa(a);
 	sb(b);
 }

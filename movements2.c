@@ -6,22 +6,22 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 02:44:29 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 02:44:30 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:27:12 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_data *new)
+void	sa(t_data *a)
 {
 	t_data	*swap;
 
-	if (ft_lstsize (new) > 1)
+	if (ft_lstsize (a) > 1)
 	{
 		swap = (t_data *) malloc(sizeof(t_data));
-		swap->content = new->content;
-		new->content = new->next->content;
-		new->next->content = swap->content;
+		swap->content = a->content;
+		a->content = a->next->content;
+		a->next->content = swap->content;
 		free(swap);
 		write(1, "sa\n", 3);
 	}
@@ -42,30 +42,30 @@ void	sb(t_data *b)
 	write(1, "sb\n", 3);
 }
 
-void	ra(t_data **new)
+void	ra(t_data **a)
 {
 	t_data	*last;
 
-	if (*new != NULL && (*new)->next != NULL)
+	if (*a != NULL && (*a)->next != NULL)
 	{
-		last = *new;
-		*new = (*new)->next;
+		last = *a;
+		*a = (*a)->next;
 		last->next = NULL;
-		ft_lstadd_back(new, last);
+		ft_lstadd_back(a, last);
 		write(1, "ra\n", 3);
 	}
 }
 
-void	rb(t_data **new)
+void	rb(t_data **a)
 {
 	t_data	*last;
 
-	if (*new != NULL && (*new)->next != NULL)
+	if (*a != NULL && (*a)->next != NULL)
 	{
-		last = *new;
-		*new = (*new)->next;
+		last = *a;
+		*a = (*a)->next;
 		last->next = NULL;
-		ft_lstadd_back(new, last);
+		ft_lstadd_back(a, last);
 		write(1, "rb\n", 3);
 	}
 }
