@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 03:17:10 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 20:28:27 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/13 05:25:39 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sort_infinitenumbers(t_data **a, t_data **b)
 
 void	check_and_push(int pos, int instructions, t_data **b, t_data **a)
 {
-	if (pos < ft_lstsize(*b) / 2)
+	if (pos <= ft_lstsize(*b) / 2)
 	{
 		while (instructions--)
 			rb(b);
@@ -75,10 +75,10 @@ void	push_to_a(t_data	**a, t_data	**b)
 
 	while (*b)
 	{
-	prev_instructions = calculate_instructions(*b, prev_pos);
-	max_instructions = calculate_instructions(*b, max_pos);
 	max_pos = get_pos(*b, ft_lstsize(*b) - 1);
 	prev_pos = get_pos(*b, ft_lstsize(*b) - 2);
+	prev_instructions = calculate_instructions(*b, prev_pos);
+	max_instructions = calculate_instructions(*b, max_pos);
 		if (max_instructions > prev_instructions)
 		{
 			check_and_push(prev_pos, prev_instructions, b, a);

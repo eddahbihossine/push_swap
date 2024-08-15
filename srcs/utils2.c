@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 03:21:27 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 20:29:05 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/12 02:32:48 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_substr(char	*s, unsigned int start, size_t len)
 	p = malloc(sizeof(char) * (len + 1));
 	i = 0;
 	if (!p)
-		return (free(p), NULL);
+		return (NULL);
 	while (i < len)
 	{
 		p[i] = *(s + start + i);

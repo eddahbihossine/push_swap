@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swapbonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 03:26:06 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 20:50:35 by heddahbi         ###   ########.fr       */
+/*   Created: 2023/05/12 00:39:52 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/05/13 04:32:18 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAPBONUS_H
+# define PUSH_SWAPBONUS_H
 # include	<stdlib.h>
 # include	<stdio.h>
 # include	<unistd.h>
 # include	<string.h>
 # include	<ctype.h>
 # include	<limits.h>
+# define BUFFER_SIZE 42
 
 typedef struct s_data
 {
@@ -53,24 +54,15 @@ char	**ft_split(char *s, char c);
 char	*ft_substr(char	*s, unsigned	int start, size_t len);
 int		ft_lstsize(t_data *lst);
 void	rr(t_data **a, t_data **b);
-int		calculate_instructions(t_data *list, int pos);
-void	index_all_items(t_data *a);
-int		get_min_list(t_data *lst);
-int		get_min3_list(t_data *lst);
-int		get_min_pos(t_data *lst);
-int		get_pos(t_data *lst, int index);
-int		get_max_list(t_data *lst);
-void	reset_all(t_data *a);
 void	ft_lstadd_front(t_data **lst, t_data *a);
-void	sort_2numbers(t_data **a);
-void	sort_3numbers(t_data **a);
 void	check(t_data **a);
-void	sort_4numbers(t_data **a, t_data **b);
-void	sort_5numbers(t_data **a, t_data **b);
-void	sort_infinitenumbers(t_data **a, t_data **b);
-void	push_to_a(t_data **a, t_data **b);
 void	ft_lstadd_front(t_data **lst, t_data *a);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-void	determine_which_sort(t_data *a, t_data *b);
+void	ss(t_data *a, t_data	*b);
+void	rr(t_data	**a, t_data	**b);
+void	rrr(t_data	**a, t_data	**b);
+void	*ft_calloc(size_t count, size_t size);
+char	*get_next_line(int fd);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 #endif

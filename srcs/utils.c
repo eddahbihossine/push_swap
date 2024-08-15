@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 03:19:41 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 20:28:52 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/13 02:16:19 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	if ((result > 2147483647ull && sign == 1)
-		|| (result < 2147483648ull && sign == -1))
+		|| (result > 2147483648ull && sign == -1))
 		ft_error();
 	return (sign * (int)result);
 }
@@ -89,6 +89,9 @@ void	ft_lstadd_back(t_data **lst, t_data *a)
 {
 	t_data	*anything;
 
+	anything = NULL;
+	if (!a)
+		free(lst);
 	if (*lst)
 	{
 		anything = ft_lstlast(*lst);

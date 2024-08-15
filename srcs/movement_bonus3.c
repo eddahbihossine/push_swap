@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   movement_bonus3.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 22:47:00 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 22:47:30 by heddahbi         ###   ########.fr       */
+/*   Created: 2023/05/12 00:54:28 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/05/13 02:14:52 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapbonus.h"
-void	*ft_calloc(size_t count, size_t size)
-{
-	unsigned char	*p;
-	void			*k;
-	int				n;
 
-	n = sizeof(p);
-	k = malloc(size * count);
-	if (!k)
-		return (free(k), NULL);
-	if (count * size > SIZE_MAX && size)
-		return (NULL);
-	p = k;
-	while (*p && (*p < n))
-	{
-		*p = 0;
-		p++;
-	}
-	return ((void *)p);
+void	rr(t_data	**a, t_data	**b)
+{
+	ra(a);
+	rb(b);
+}
+
+void	rrr(t_data	**a, t_data **b)
+{
+	rra(a);
+	rrb(b);
 }

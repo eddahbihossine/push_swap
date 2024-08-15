@@ -1,12 +1,25 @@
-#ifndef PUSH_SWAPBONUS_H
-# define PUSH_SWAPBONUS_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/10 03:26:06 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/05/13 04:43:17 by heddahbi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 # include	<stdlib.h>
 # include	<stdio.h>
 # include	<unistd.h>
 # include	<string.h>
 # include	<ctype.h>
 # include	<limits.h>
-#  define BUFFER_SIZE 42
+# include	<stdbool.h>
+
 typedef struct s_data
 {
 	int				content;
@@ -31,6 +44,8 @@ void	ra(t_data **a);
 void	rb(t_data **a);
 void	rra(t_data **a);
 void	rrb(t_data **b);
+void	rr(t_data	**a, t_data	**b);
+void	rrr(t_data	**a, t_data	**b);
 void	pa(t_data **b, t_data **a);
 void	pb(t_data **a, t_data **b);
 int		check_sort(t_data **a);
@@ -60,8 +75,5 @@ void	push_to_a(t_data **a, t_data **b);
 void	ft_lstadd_front(t_data **lst, t_data *a);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-void	determine_which_sort(t_data *a, t_data *b);
-void	ss(t_data *a, t_data	*b);
-void	*ft_calloc(size_t count, size_t size);
-char	*get_next_line(int fd);
+void	determine_which_sort(t_data **a, t_data **b);
 #endif

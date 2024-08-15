@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements.c                                        :+:      :+:    :+:   */
+/*   movement_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 02:39:54 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 23:00:08 by heddahbi         ###   ########.fr       */
+/*   Created: 2023/05/12 00:44:45 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/05/13 02:14:22 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swapbonus.h"
 
 void	rra(t_data **a)
 {
@@ -29,7 +29,6 @@ void	rra(t_data **a)
 		prev->next = NULL;
 		front->next = *a;
 		*a = front;
-		write(1, "rra\n", 4);
 	}
 }
 
@@ -50,7 +49,6 @@ void	rrb(t_data **b)
 		prev->next = NULL;
 		front->next = *b;
 		*b = front;
-		write (1, "rrb\n", 4);
 	}
 }
 
@@ -64,22 +62,19 @@ void	pb(t_data **a, t_data **b)
 		*a = (*a)->next;
 		swap->next = *b;
 		*b = swap;
-		write (1, "pb\n", 3);
 	}
 }
 
 void	pa(t_data **b, t_data **a)
 {
 	t_data	*swap;
-	if(!b)
-		ft_error();
-	if (b != NULL || (*b) != NULL)
+
+	if (b != NULL && (*b) != NULL)
 	{
 		swap = *b;
 		*b = (*b)->next;
 		swap->next = *a;
 		*a = swap;
-		write(1, "pa\n", 3);
 	}
 }
 

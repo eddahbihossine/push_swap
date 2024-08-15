@@ -6,11 +6,12 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 22:44:58 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/05/10 22:47:38 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/05/13 02:14:41 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swapbonus.h"
+
 char	*rest(char **f, int i)
 {
 	int		length;
@@ -41,6 +42,7 @@ int	check_the_n(char *buffer)
 			return (i);
 		i++;
 	}
+	free(buffer);
 	return (-1);
 }
 
