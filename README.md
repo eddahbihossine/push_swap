@@ -1,6 +1,3 @@
-Here's a detailed README template for the `push_swap` project:
-
----
 
 # 🌀 Push Swap
 
